@@ -68,6 +68,7 @@ describe('Open the sidebar from the viewer and open viewer with sidebar already 
 	})
 
 	it('See the menu icon and title on the viewer header', function() {
+		cy.get('body > .viewer').trigger('mousemove') // Wiggle mouse
 		cy.get('body > .viewer .modal-title').should('contain', 'image1.jpg')
 		cy.get('body > .viewer .modal-header button.action-item__menutoggle').should('be.visible')
 		cy.get('body > .viewer .modal-header button.icon-close').should('be.visible')
@@ -78,6 +79,7 @@ describe('Open the sidebar from the viewer and open viewer with sidebar already 
 	})
 
 	it('Open the sidebar', function() {
+		cy.get('body > .viewer').trigger('mousemove') // Wiggle mouse
 		// open the menu
 		cy.get('body > .viewer .modal-header button.action-item__menutoggle').click()
 		// open the sidebar
